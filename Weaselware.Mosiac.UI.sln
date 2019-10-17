@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weaselware.Mosiac.UI", "Weaselware.Mosiac.UI\Weaselware.Mosiac.UI.csproj", "{C8ECBFCD-ACDC-4F5E-B092-66EEC64BF942}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weaselware.Mosiac.Model", "Weaselware.Mosiac.Model\Weaselware.Mosiac.Model.csproj", "{B40932E5-AD6F-4481-A3D4-E83F799DB30C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weaselware.Mosiac.Model", "Weaselware.Mosiac.Model\Weaselware.Mosiac.Model.csproj", "{B40932E5-AD6F-4481-A3D4-E83F799DB30C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weaselware.Mosiac.DataAccess", "Weaselware.Mosiac.DataAccess\Weaselware.Mosiac.DataAccess.csproj", "{F559D06D-5CFF-4781-9880-BE6E529C3727}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weaselware.Mosiac.DataAccess", "Weaselware.Mosiac.DataAccess\Weaselware.Mosiac.DataAccess.csproj", "{F559D06D-5CFF-4781-9880-BE6E529C3727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globomantics.UI.WPF", "..\..\..\Downloads\wpf-advanced-reusable-styles-themes\01\demos\Globomantics.UI\Globomantics.UI.WPF\Globomantics.UI.WPF.csproj", "{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F559D06D-5CFF-4781-9880-BE6E529C3727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F559D06D-5CFF-4781-9880-BE6E529C3727}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F559D06D-5CFF-4781-9880-BE6E529C3727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
