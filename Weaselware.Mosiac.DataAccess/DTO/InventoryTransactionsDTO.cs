@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Database.Models;
+using Weaselware.Mosiac.Model;
 
 
-namespace Database.DTO
+namespace Weaselware.Mosiac.UI.Services
 {
     public class InventoryTransactionsDTO
     {

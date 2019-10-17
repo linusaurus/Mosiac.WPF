@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MWeaselware.Mosiac.UI.Services
+namespace Weaselware.Mosiac.UI.Services
 {
     public interface IPartService
     {
