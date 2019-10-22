@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Database.Models;
+using Weaselware.Mosiac.Model;
 
 namespace BadgerData.DTO
 {

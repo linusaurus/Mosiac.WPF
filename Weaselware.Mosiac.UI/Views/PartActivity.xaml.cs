@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MosiacUI.Views
-{
+namespace Weaselware.Mosiac.UI
+{ 
     /// <summary>
     /// Interaction logic for PartActivity.xaml
     /// </summary>
@@ -22,7 +22,7 @@ namespace MosiacUI.Views
     {
         public PartActivity()
         {
-            InitializeComponent();
+           
         }
     }
 }

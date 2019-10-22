@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weaselware.Mosiac.DataAcces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globomantics.UI.WPF", "..\..\..\Downloads\wpf-advanced-reusable-styles-themes\01\demos\Globomantics.UI\Globomantics.UI.WPF\Globomantics.UI.WPF.csproj", "{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MosiacTest", "MosiacTest\MosiacTest.csproj", "{D820285B-5969-4D8B-BF8D-C64E2AE8A0C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB41F8A0-F1BF-468A-80D3-1994DEDBAA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D820285B-5969-4D8B-BF8D-C64E2AE8A0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D820285B-5969-4D8B-BF8D-C64E2AE8A0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D820285B-5969-4D8B-BF8D-C64E2AE8A0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D820285B-5969-4D8B-BF8D-C64E2AE8A0C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

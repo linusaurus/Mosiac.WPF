@@ -1,7 +1,6 @@
 using System;
 
 
-
 namespace Weaselware.Mosiac.Model
 {
     public class Article

@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Weaselware.Mosiac.DataAccess
 {
-    public class CategoryConfig : IEntityTypeConfiguration<Category>
+    public class PartCategoryConfig : IEntityTypeConfiguration<PartCategory>
     {
-        public void Configure(EntityTypeBuilder<Category> entity)
+        public void Configure(EntityTypeBuilder<PartCategory> entity)
         {
-            entity.HasKey(p => p.Categoryid);
+            entity.HasKey(p => p.PartCategoryID);
         }
     }
 }

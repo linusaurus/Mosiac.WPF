@@ -5,7 +5,7 @@ using System.Linq;
 
 
 namespace Weaselware.Mosiac.Model
-{ 
+{
     //public class OrderStatus
     //{
     //    public int OrderStatusID { get; set; }

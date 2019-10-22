@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace Weaselware.Mosiac.Model
 {
@@ -11,7 +11,7 @@ namespace Weaselware.Mosiac.Model
         public Part()
         {
             this.DocumentParts = new HashSet<DocumentParts>();
-            this.UnitOfPurchases = new HashSet<UnitOfPurchase>();
+
         }
 
         public int PartID { get; set; }
@@ -42,11 +42,12 @@ namespace Weaselware.Mosiac.Model
         public string SKU { get; set; }
         public bool? CARBtrack { get; set; }
         public string CARBlevel { get; set; }
+        public int? ParentID { get; set; }
+        public decimal? Amount_Required { get; set; }
 
-        public PartType PartType { get; set; }
-        public UnitOfMeasure UnitOfMeasure { get; set; }
-        public Supplier Supplier { get; set; }
+
         public ICollection<DocumentParts> DocumentParts { get; set; }
         public ICollection<UnitOfPurchase> UnitOfPurchases { get; set; }
     }
 }
+

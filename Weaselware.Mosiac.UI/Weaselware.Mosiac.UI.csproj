@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Prism.Core" Version="7.2.0.1367" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0-preview1.19504.10" />
   </ItemGroup>
@@ -27,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Startup\" />
   </ItemGroup>
 
   <ItemGroup>

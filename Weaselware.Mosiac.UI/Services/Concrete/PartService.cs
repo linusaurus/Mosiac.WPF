@@ -1,21 +1,20 @@
-﻿using Weaselware.Mosiac.DataAccess;
-using Weaselware.Mosiac.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Weaselware.Mosiac.DataAccess;
+using Weaselware.Mosiac.Model;
+using Microsoft.EntityFrameworkCore;
 
-using Database.DTO;
+
 
 namespace Weaselware.Mosiac.UI.Services
 {
     public class PartService : IPartService
     {
-        private DatabaseContext _ctx;
+        private MosiacContext _ctx;
 
-        public PartService(Database.DatabaseContext ctx)
+        public PartService(MosiacContext ctx)
         {
             _ctx = ctx;
         }
@@ -33,7 +32,7 @@ namespace Weaselware.Mosiac.UI.Services
         }
         public void AddPartResources(Document doc)
         {
-            _ctx.Document.Add(doc);
+             _ctx.Document.Add(doc);
             _ctx.SaveChanges();
 
 
@@ -86,39 +85,58 @@ namespace Weaselware.Mosiac.UI.Services
 
         public async Task<List<InventoryTransactionsDTO>> GetPartTransactionAsync(int partID)
         {
-            return await _ctx.Inventory.AsNoTracking().Where(p => p.PartID == partID)
-                .Select(d => new InventoryTransactionsDTO
-                {
-                    DateStamp = d.DateStamp.GetValueOrDefault(),
-                    Description = d.Description,
-                    LineID = d.LineID.GetValueOrDefault(),
-                    PartID = d.PartID.GetValueOrDefault(),
-                    JobName = _ctx.Job.Where(j => j.job_id == d.JobID.GetValueOrDefault()).Select(s => s.jobname).First(),
-                    Location = d.Location,
-                    OrderReceiptID = d.OrderReceiptID.GetValueOrDefault(),
-                    Qnty = d.Qnty.GetValueOrDefault(),
-                    StockTransactionID = d.StockTransactionID,
-                    TransActionType = "1",
-                    UnitOfMeasure = _ctx.UnitOfMeasure.Where(u => u.UID == d.UnitOfMeasure.GetValueOrDefault()).Select(p => p.UOM).First()
+            try
+            {
+                return await _ctx.Inventory.AsNoTracking().Where(p => p.PartID == partID)
+               .Select(d => new InventoryTransactionsDTO
+               {
+                   DateStamp = d.DateStamp.GetValueOrDefault(),
+                   Description = d.Description,
+                   LineID = d.LineID.GetValueOrDefault(),
+                   PartID = d.PartID.GetValueOrDefault(),
+                   JobName = _ctx.Job.Where(j => j.job_id == d.JobID.GetValueOrDefault()).Select(s => s.jobname).First(),
+                   Location = d.Location,
+                   OrderReceiptID = d.OrderReceiptID.GetValueOrDefault(),
+                   Qnty = d.Qnty.GetValueOrDefault(),
+                   StockTransactionID = d.StockTransactionID,
+                   TransActionType = "1",
+                   UnitOfMeasure = _ctx.UnitOfMeasure.Where(u => u.UID == d.UnitOfMeasure.GetValueOrDefault()).Select(p => p.UOM).First()
 
-                }).ToListAsync();
+               }).ToListAsync();
+
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+           
 
         }
 
         public async Task<List<PurchaseOrderListDTO>> GetPartOrders(int partID)
         {
-            return await _ctx.PurchaseLineItem.Include(f => f.PurchaseOrder).AsNoTracking().Where(p => p.PartID == partID)
-           .Select(d => new PurchaseOrderListDTO
-           {
-               PurchaseOrderID = d.PurchaseOrderID,
-               JobName = _ctx.Job.Where(j => j.job_id == d.JobID.Value).First().jobname,
-               OrderDate = d.PurchaseOrder.OrderDate.ToShortDateString(),
-               OrderTotal = d.PurchaseOrder.OrderTotal.GetValueOrDefault(),
-               Purchaser = d.PurchaseOrder.Employee.lastname,
-               SupplierName = d.PurchaseOrder.Supplier.SupplierName,
-               Received = d.Recieved.GetValueOrDefault()
+            try
+            {
+                return await _ctx.PurchaseLineItem.Include(f => f.PurchaseOrder).AsNoTracking().Where(p => p.PartID == partID)
+          .Select(d => new PurchaseOrderListDTO
+          {
+              PurchaseOrderID = d.PurchaseOrderID,
+              JobName = _ctx.Job.Where(j => j.job_id == d.JobID.Value).First().jobname,
+              OrderDate = d.PurchaseOrder.OrderDate.ToShortDateString(),
+              OrderTotal = d.PurchaseOrder.OrderTotal.GetValueOrDefault(),
+              Purchaser = d.PurchaseOrder.Employee.lastname,
+              SupplierName = d.PurchaseOrder.Supplier.SupplierName,
+              Received = d.Recieved.GetValueOrDefault()
 
-           }).OrderByDescending(j => j.PurchaseOrderID).ToListAsync();
+          }).OrderByDescending(j => j.PurchaseOrderID).ToListAsync();
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+           
         }
     }
 }

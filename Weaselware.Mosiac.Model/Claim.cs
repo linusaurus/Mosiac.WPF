@@ -2,9 +2,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-
 namespace Weaselware.Mosiac.Model
-{
+{ 
     public class Claim
     {
         public int ClaimID { get; set; }

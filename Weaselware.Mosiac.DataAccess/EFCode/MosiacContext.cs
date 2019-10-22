@@ -11,7 +11,8 @@ namespace Weaselware.Mosiac.DataAccess
     public class MosiacContext : DbContext
     {
 
-        //private const string ConnectionString = @"Server=192.168.10.3;database=Badger;uid=sa;pwd=Kx09a32x;";
+        private const string ConnectionString = @"Server=192.168.10.3;database=Badger;uid=sa;pwd=Kx09a32x;";
+        
 
         public MosiacContext():base()
         {
@@ -28,7 +29,7 @@ namespace Weaselware.Mosiac.DataAccess
         public virtual DbSet<ClaimItem> ClaimItem { get; set; } //Revised
         public virtual DbSet<ClaimDocument> ClaimDocument { get; set; } //Revised      
         public virtual DbSet<Product> Product { get; set; } // Revised
-        public virtual DbSet<Category> Categories { get; set; }   //Revised
+        public virtual DbSet<PartCategory> Categories { get; set; }   //Revised
         public virtual DbSet<Document> Document { get; set; }  //Revised
         public virtual DbSet<DocumentParts> DocumentParts { get; set; } //No-Change
         public virtual DbSet<Finish> Finish { get; set; }
@@ -39,20 +40,30 @@ namespace Weaselware.Mosiac.DataAccess
         public virtual DbSet<OrderReciept> OrderReciept { get; set; }
         public virtual DbSet<Part> Part { get; set; }
         public virtual DbSet<PartClass> PartClass { get; set; }
-        public virtual DbSet<PartType> PartType { get; set; }
+        public virtual DbSet<PartTypes> PartTypes { get; set; }
         public virtual DbSet<ShipBy> ShipBy { get; set; }
         public virtual DbSet<UnitOfPurchase> UnitOfPurchase { get; set; }
+        public virtual DbSet<UnitOfMeasure> UnitOfMeasure { get; set; }
+
+        //-----------For Future Development -------------------------------------------
         //public DbSet<Requisition> Requisition { get; set; }
-       // public DbSet<RequisitionItem> RequisitionItem { get; set; }
+        //public DbSet<RequisitionItem> RequisitionItem { get; set; }
         //public DbSet<WorkOrder> WorkOrder { get; set; }
         //public DbSet<WorkOrderRouting> WorkOrderRouting { get; set; }
         //public DbSet<WorkCenter> WorkCenter { get; set; }
         //public DbSet<Task> Task { get; set; }
+        //---------------------------------------------------------------------
+
         public virtual DbSet<PurchaseOrder> PurchaseOrder { get; set; }
         public virtual DbSet<PurchaseLineItem> PurchaseLineItem { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<SubAssembly> SubAssembly { get; set; }
         public virtual DbSet<Supplier> Supplier { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(ConnectionString);
+        }
 
 
         protected override void
@@ -82,6 +93,7 @@ namespace Weaselware.Mosiac.DataAccess
             modelBuilder.ApplyConfiguration(new OrderReceiptConfig());
             modelBuilder.ApplyConfiguration(new TransActionTypeConfig());
             modelBuilder.ApplyConfiguration(new DocumentConfig());
+            modelBuilder.ApplyConfiguration(new PartTypeConfig());
         }
 
     }

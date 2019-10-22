@@ -9,7 +9,7 @@ namespace Weaselware.Mosiac.Model
     public class PurchaseLineItem
     {
         public int LineID { get; set; }
-        public int? PurchaseOrderID { get; set; }
+        public int PurchaseOrderID { get; set; }
         public int? JobID { get; set; }
         public int? VendorID { get; set; }
         public int? PartID { get; set; }

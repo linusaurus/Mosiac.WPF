@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BadgerData.DTO
+namespace Weaselware.Mosiac.DataAccess
 {
     public class PurchaseLineItemDTO
     {

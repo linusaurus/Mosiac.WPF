@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MosiacUI.Events
+namespace Weaselware.Mosiac.UI.Events
 {
     public class OpenPartDetailEvent : PubSubEvent<int>
     {

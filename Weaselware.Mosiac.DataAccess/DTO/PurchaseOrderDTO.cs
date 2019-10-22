@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Database.Models;
+using Weaselware.Mosiac.Model;
 
 
 
-namespace BadgerData.DTO
+namespace Weaselware.Mosiac.DataAccess
 {
     public class PurchaseOrderDTO  
     {

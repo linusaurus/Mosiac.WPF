@@ -1,4 +1,4 @@
-﻿using Weaselware.Mosiac.UI.ViewModels;
+﻿using Weaselware.Mosiac.UI.ViewModel;
 using System;
 using System.Collections;
 using System.Collections.Generic;

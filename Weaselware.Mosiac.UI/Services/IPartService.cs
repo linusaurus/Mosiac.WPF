@@ -1,10 +1,7 @@
-﻿using Weaselware.Mosiac.Model;
-using Weaselware.Mosiac.DataAccess;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Weaselware.Mosiac.DataAccess;
+using Weaselware.Mosiac.Model;
 
 namespace Weaselware.Mosiac.UI.Services
 {

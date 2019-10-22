@@ -13,5 +13,6 @@ namespace Weaselware.Mosiac.Model
         public string Phone { get; set; }
         public string WebAddress { get; set; }
         public int? ManuCategoryID { get; set; }
+        public ICollection<Part> Parts { get; set; } = new HashSet<Part>();  
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Weaselware.Mosiac.UI.ViewModels;
+using Weaselware.Mosiac.UI.ViewModel;
 
 
 namespace Weaselware.Mosiac.UI.Wrappers

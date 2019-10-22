@@ -31,4 +31,5 @@ public class Product
     public Project Project { get; set; }
     public List<SubAssembly> SubAssemblies { get; set; }
 }
+
 }

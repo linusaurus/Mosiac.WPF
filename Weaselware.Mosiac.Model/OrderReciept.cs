@@ -5,7 +5,7 @@ using System.Linq;
 
 
 namespace Weaselware.Mosiac.Model
-{ 
+{
     public class OrderReciept
     {
         public OrderReciept()
