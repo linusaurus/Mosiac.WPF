@@ -1,13 +1,10 @@
 ﻿using Weaselware.Mosiac.Model;
 using System.Collections.ObjectModel;
-using Weaselware.Mosiac.DataAccess;
 using System.Threading.Tasks;
-using System.ComponentModel;
 using Prism.Events;
 using System;
 using System.Linq;
 using Weaselware.Mosiac.UI.Events;
-using Weaselware.Mosiac.UI.ViewModel;
 using Weaselware.Mosiac.UI.Services;
 using MosiacUI.Views.Services;
 
@@ -41,10 +38,10 @@ namespace Weaselware.Mosiac.UI.ViewModel
   
         }
 
-        // Load the Datasource here
+        //-- Load the Datasource here --------------------------------------
         public async Task LoadAsync()
         {
-            var parts = await _partService.GetAllAsync();
+            //var parts = await _partService.GetAllAsync();
             //Parts.Clear();
             //foreach (var part in parts)
             //{
@@ -56,7 +53,7 @@ namespace Weaselware.Mosiac.UI.ViewModel
             await PartDetailModel.LoadUnitsOfMeasureList();
 
         }
-        // Search Part by Description or PartID
+        //-- Search Part by Description or PartID ---------------------------
         public async void Search(string term)
         {
             //TODO load partlineitem as viewModels

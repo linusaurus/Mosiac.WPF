@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Prism.Events;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -38,5 +39,7 @@ namespace Weaselware.Mosiac.UI
         }
 
         public IPartDetailViewModel PartDetailViewModel { get; }
+
+       
     }
 }

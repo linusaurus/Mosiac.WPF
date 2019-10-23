@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:gui="http://globomantics.com/2019/ui/wpf"
     xmlns:local="clr-namespace:Weaselware.Mosiac.UI"
+    xmlns:view="clr-namespace:Weaselware.Mosiac.UI.Views"
     Title="Main"
     Width="800"
     Height="450"
@@ -16,20 +17,23 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="7*" />
             <RowDefinition Height="38" />
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" Grid.Column="0">
-            <GridView>
-                <GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding ItemDescription}" Header="Description" />
+        <local:SearchBar Margin="2" />
 
-                </GridViewColumn>
-            </GridView>
-
-        </ListView>
-        <StackPanel
+        <view:PartsFinderView
             Grid.Row="1"
+            Grid.Column="0"
+            Margin="6,6,4,6" />
+
+        <view:PartDetailView
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="8" />
+        <StackPanel
+            Grid.Row="2"
             Grid.Column="2"
             Margin="0,6,0,6"
             HorizontalAlignment="Right"

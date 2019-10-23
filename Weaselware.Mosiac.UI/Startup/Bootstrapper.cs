@@ -8,6 +8,7 @@ using Weaselware.Mosiac.UI.ViewModel;
 using Weaselware.Mosiac.Model;
 using Weaselware.Mosiac.UI.Services;
 using Weaselware.Mosiac.DataAccess;
+using Weaselware.Mosiac.UI.Views;
 using MosiacUI.Views.Services;
 
 namespace Weaselware.Mosiac.UI.Startup
@@ -23,7 +24,7 @@ namespace Weaselware.Mosiac.UI.Startup
 
             builder.RegisterType<MosiacContext>().AsSelf();
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
-            //builder.RegisterType<PartDetailView>().AsSelf();
+            builder.RegisterType<PartDetailView>().AsSelf();
             builder.RegisterType<PartDetailViewModel>().As<IPartDetailViewModel>();
 
             
